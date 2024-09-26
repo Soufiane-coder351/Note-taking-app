@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "369712951247",
+    "project_id": "note-app-5bee8",
+    "storage_bucket": "note-app-5bee8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369712951247:android:098cf3d8c0d8dbcd69acba",
+        "android_client_info": {
+          "package_name": "com.soufien.note_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "369712951247-4gb3pvimepa38692nibapenf7dbh1lkf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3fE3GNpTde53TDqWGPyazmMA2Mtt3qwg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "369712951247-4gb3pvimepa38692nibapenf7dbh1lkf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
