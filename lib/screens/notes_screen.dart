@@ -3,6 +3,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:note_app/screens/edit_screen.dart';
+import 'package:note_app/screens/home_screen.dart';
 import 'package:note_app/widgets/button_widget.dart';
 import 'package:note_app/widgets/note_list.dart';
 
@@ -14,8 +15,7 @@ class NotesScreen extends StatefulWidget {
   State<NotesScreen> createState() => _NotesScreenState();
 }
 
-class _NotesScreenState extends State<NotesScreen>
-    with SingleTickerProviderStateMixin {
+class _NotesScreenState extends State<NotesScreen> with SingleTickerProviderStateMixin {
   final _auth = FirebaseAuth.instance;
 
   int activeTab = 0;
@@ -52,8 +52,7 @@ class _NotesScreenState extends State<NotesScreen>
           child: Column(
             children: [
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -94,7 +93,6 @@ class _NotesScreenState extends State<NotesScreen>
                                 'intent': false, //dont edit, but add new
                               },
                             );
-                            
                           },
                           width: 50,
                           height: 50,
@@ -110,7 +108,11 @@ class _NotesScreenState extends State<NotesScreen>
                         ButtonWidget(
                           onPressed: () {
                             _auth.signOut();
-                            Navigator.pop(context);
+                            //remove all previous routes and go back to home screen
+                            Navigator.of(context).pushAndRemoveUntil(
+                              MaterialPageRoute(builder: (context) => HomeScreen()),
+                              (Route<dynamic> route) => false, // remove all previous routes
+                            );
                           },
                           width: 50,
                           height: 50,
@@ -141,8 +143,7 @@ class _NotesScreenState extends State<NotesScreen>
                       },
                       height: 50,
                       width: 100,
-                      backgroundColor:
-                          activeTab == i ? Color(0xffcfff47) : Colors.white,
+                      backgroundColor: activeTab == i ? Color(0xffcfff47) : Colors.white,
                       child: Text(
                         tabs[i],
                         style: TextStyle(
