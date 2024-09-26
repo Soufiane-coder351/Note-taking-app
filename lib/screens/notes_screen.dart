@@ -3,11 +3,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:note_app/screens/edit_screen.dart';
-import 'package:note_app/screens/login_screen.dart';
-import 'package:note_app/screens/settings_screen.dart';
 import 'package:note_app/widgets/button_widget.dart';
 import 'package:note_app/widgets/note_list.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class NotesScreen extends StatefulWidget {
   static const screenRoute = 'notes_screen';
@@ -113,7 +110,7 @@ class _NotesScreenState extends State<NotesScreen>
                         ButtonWidget(
                           onPressed: () {
                             _auth.signOut();
-                            Navigator.pop();
+                            Navigator.pop(context);
                           },
                           width: 50,
                           height: 50,
